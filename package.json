@@ -15,8 +15,8 @@
   ],
   "schematics": "./collection.json",
   "dependencies": {
-    "@angular-devkit/core": "github:angular/angular-devkit-core-builds#3ae3fa3",
-    "@angular-devkit/schematics": "github:angular/angular-devkit-schematics-builds#3ae3fa3"
+    "@angular-devkit/core": "github:angular/angular-devkit-core-builds#3cd6a33",
+    "@angular-devkit/schematics": "github:angular/angular-devkit-schematics-builds#3cd6a33"
   },
   "repository": {
     "type": "git",
