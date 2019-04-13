@@ -69,15 +69,27 @@ function default_1(options) {
         catch (_) {
         }
         let source = schematics_1.apply(schematics_1.url('./schematic-files'), [
-            schematics_1.applyTemplates(Object.assign({}, options, { coreVersion,
-                schematicsVersion, dot: '.', camelize: core_1.strings.camelize, dasherize: core_1.strings.dasherize })),
+            schematics_1.applyTemplates({
+                ...options,
+                coreVersion,
+                schematicsVersion,
+                dot: '.',
+                camelize: core_1.strings.camelize,
+                dasherize: core_1.strings.dasherize,
+            }),
         ]);
         // Simply create a new schematic project.
         if (!collectionPath) {
             collectionPath = core_1.normalize('/' + options.name + '/src/collection.json');
             source = schematics_1.apply(schematics_1.url('./project-files'), [
-                schematics_1.applyTemplates(Object.assign({}, options, { coreVersion,
-                    schematicsVersion, dot: '.', camelize: core_1.strings.camelize, dasherize: core_1.strings.dasherize })),
+                schematics_1.applyTemplates({
+                    ...options,
+                    coreVersion,
+                    schematicsVersion,
+                    dot: '.',
+                    camelize: core_1.strings.camelize,
+                    dasherize: core_1.strings.dasherize,
+                }),
                 schematics_1.mergeWith(source),
                 schematics_1.move(options.name),
             ]);

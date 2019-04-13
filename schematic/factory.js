@@ -13,8 +13,13 @@ function default_1(options) {
     const schematicsVersion = require('@angular-devkit/schematics/package.json').version;
     const coreVersion = require('@angular-devkit/core/package.json').version;
     return schematics_1.mergeWith(schematics_1.apply(schematics_1.url('./files'), [
-        schematics_1.partitionApplyMerge((p) => !/\/src\/.*?\/files\//.test(p), schematics_1.template(Object.assign({}, options, { coreVersion,
-            schematicsVersion, dot: '.', dasherize: core_1.strings.dasherize }))),
+        schematics_1.partitionApplyMerge((p) => !/\/src\/.*?\/files\//.test(p), schematics_1.template({
+            ...options,
+            coreVersion,
+            schematicsVersion,
+            dot: '.',
+            dasherize: core_1.strings.dasherize,
+        })),
         schematics_1.move(options.name),
     ]));
 }
