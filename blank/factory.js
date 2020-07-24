@@ -57,6 +57,8 @@ function default_1(options) {
         try {
             const packageJsonContent = tree.read('/package.json');
             if (packageJsonContent) {
+                // In google3 the return value of JSON.parse() must be immediately typed,
+                // otherwise it defaults to `any`, which is prohibited.
                 const packageJson = JSON.parse(packageJsonContent.toString('utf-8'));
                 if ('schematics' in packageJson) {
                     const p = core_1.normalize(packageJson['schematics']);
