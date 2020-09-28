@@ -60,16 +60,15 @@ function default_1(options) {
                 // In google3 the return value of JSON.parse() must be immediately typed,
                 // otherwise it defaults to `any`, which is prohibited.
                 const packageJson = JSON.parse(packageJsonContent.toString('utf-8'));
-                if ('schematics' in packageJson) {
-                    const p = core_1.normalize(packageJson['schematics']);
+                if (typeof packageJson.schematics === 'string') {
+                    const p = core_1.normalize(packageJson.schematics);
                     if (tree.exists(p)) {
                         collectionPath = p;
                     }
                 }
             }
         }
-        catch (_) {
-        }
+        catch (_a) { }
         let source = schematics_1.apply(schematics_1.url('./schematic-files'), [
             schematics_1.applyTemplates({
                 ...options,

@@ -13,7 +13,7 @@ const tasks_1 = require("@angular-devkit/schematics/tasks");
 function default_1(options) {
     const schematicsVersion = require('@angular-devkit/schematics/package.json').version;
     const coreVersion = require('@angular-devkit/core/package.json').version;
-    return (_tree, context) => {
+    return (_, context) => {
         context.addTask(new tasks_1.NodePackageInstallTask(options.name));
         return schematics_1.mergeWith(schematics_1.apply(schematics_1.url('./files'), [
             schematics_1.partitionApplyMerge((p) => !/\/src\/.*?\/files\//.test(p), schematics_1.template({
