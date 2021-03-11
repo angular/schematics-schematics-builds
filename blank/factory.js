@@ -68,7 +68,7 @@ function default_1(options) {
                 }
             }
         }
-        catch (_a) { }
+        catch { }
         let source = schematics_1.apply(schematics_1.url('./schematic-files'), [
             schematics_1.applyTemplates({
                 ...options,
